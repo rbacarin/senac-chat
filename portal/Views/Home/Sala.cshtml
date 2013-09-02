@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Sala";
+}
+
+<div id="msgms">
+    <ul>
+    </ul>
+</div>
+
+<div id="usuarios">
+    <ul>
+    </ul>
+</div>
+
+<div>
+    <input type="text" id="msgm" />
+    <input type="button" id="send" />     
+</div>
+
+@section Scripts {
+    <script id="msgTemplate" type="text/html">
+        {{each mensagens}}
+            <li><b>${usuario}:</b> ${mensagem}</li>
+        {{/each}}
+    </script>
+    
+    <script type="text/javascript">
+        (function ($, undefined) {
+            var self = this;
+
+            self.bind = function() {
+               $.post("@Url.Action("Bind", "Chatroom")",                        
+                    function(data){
+                        if (data.mensagens)
+                            $("#msgTemplate").tmpl(data).appendTo("#msgms > ul");
+                    
+                        setTimeout(self.bind, 100);
+                    });
+            }
+
+            $("#send").click(function () {
+                $.post("@Url.Action("Post", "Chatroom")",
+                { "usuario": "teste", "mensagem" : $("#msgm").val() },
+                function(r) {
+                    
+                });
+            });
+
+            $(document).ready(self.bind);
+        })(jQuery);
+    </script>
+}

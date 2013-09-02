@@ -1,0 +1,15 @@
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\obj\Debug\Chat.csprojResolveAssemblyReference.cache
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\ChatServer.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\ChatServer.pdb
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\Models.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\Models.pdb
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\obj\Debug\ChatServer.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\obj\Debug\ChatServer.pdb
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Core.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Linq.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.PlatformServices.dll
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Core.xml
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.Linq.xml
+C:\Users\cdonk_000\SkyDrive\Documentos\POS\Construcao de Componentes de Sw\senac-chat\ChatServer\bin\Debug\System.Reactive.PlatformServices.xml
