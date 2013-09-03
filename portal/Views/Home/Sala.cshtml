@@ -14,7 +14,8 @@
 
 <div>
     <input type="text" id="msgm" />
-    <input type="button" id="send" />     
+    <input type="hidden" id="myName" />
+    <input type="button" id="send" value="enviar" />     
 </div>
 
 @section Scripts {
@@ -40,13 +41,16 @@
 
             $("#send").click(function () {
                 $.post("@Url.Action("Post", "Chatroom")",
-                { "usuario": "teste", "mensagem" : $("#msgm").val() },
+                { "usuario": $('#myName').val(), "mensagem" : $("#msgm").val() },
                 function(r) {
                     
                 });
             });
 
-            $(document).ready(self.bind);
+            $(document).ready(function () {
+                $('#myName').val(prompt("Qual seu nome fera ?"));
+                self.bind();                
+            });
         })(jQuery);
     </script>
 }
