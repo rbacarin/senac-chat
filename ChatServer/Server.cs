@@ -12,27 +12,29 @@ namespace Chat
         private static Subject<Models.Mensagem> _messages = new Subject<Models.Mensagem>();
 
 
-        public static void CheckForMessagesAsync(Action<List<Models.Mensagem>> onMessages)
+        public static void ProcurarMensagensAsync(Action<List<Models.Mensagem>> callback)
         {
-            var queued = ThreadPool.QueueUserWorkItem(new WaitCallback(parm =>
+            var queued = ThreadPool.QueueUserWorkItem(new WaitCallback(_callback =>
             {
-                var msgs = new List<Models.Mensagem>();
-                var wait = new AutoResetEvent(false);
+                List<Models.Mensagem> msgs = new List<Models.Mensagem>();
+                AutoResetEvent wait = new AutoResetEvent(false);
                 using (var subscriber = _messages.Subscribe(msg =>
                 {
                     msgs.Add(msg);
                     wait.Set();
                 }))
                 {
-                    // Wait for the max seconds for a new msg
+                    // Esperar o tempo limite de bind por mensagens, se não, liberar longpool
+                    // Ou entao, espera o wait.Set()
                     wait.WaitOne(TimeSpan.FromSeconds(60));
-                }
+                } 
 
-                ((Action<List<Models.Mensagem>>)parm)(msgs);
-            }), onMessages);
+                ((Action<List<Models.Mensagem>>)_callback)(msgs);
+            }), callback);
 
+            // Se por algum motivo nao conseguiu montar a fila, retorna vazio.
             if (!queued)
-                onMessages(new List<Models.Mensagem>());
+                callback(new List<Models.Mensagem>());
         }
 
         public static void Post(string usuario, string mensagem)
@@ -46,4 +48,5 @@ namespace Chat
                });
         }
     }
+
 }

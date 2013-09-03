@@ -16,11 +16,11 @@ namespace portal.Controllers
         {
             AsyncManager.OutstandingOperations.Increment();
 
-            Chat.Server.CheckForMessagesAsync(msgm =>
+            Chat.Server.ProcurarMensagensAsync(novasMensagens =>
             {
                 AsyncManager.Parameters["response"] = new Chat.Models.ChatResponse()
                 {
-                    mensagens = msgm
+                    mensagens = novasMensagens
                 };
                 AsyncManager.OutstandingOperations.Decrement();
             });
